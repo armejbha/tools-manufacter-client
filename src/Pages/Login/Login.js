@@ -2,7 +2,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 import Social from './Social';
 const Login = () => {
@@ -10,6 +10,8 @@ const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     let errorMessage;
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || '/';
     if (loading) {
         return <Loading></Loading>
     }
@@ -17,7 +19,7 @@ const Login = () => {
         errorMessage = <p className='text-red-500'>{error.message}</p>
     }
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
     const onSubmit = data => {
         console.log(data);
@@ -84,7 +86,7 @@ const Login = () => {
                         {errorMessage}
                         <input className='btn w-full max-w-xs' type="submit" value='login' />
                     </form>
-                    <p className='text-center'><small>New to Manufacrer?<Link to='/register' className='text-secondary'>Create new account</Link></small></p>
+                    <p className='text-center'><small>New to Manufacter?<Link to='/register' className='text-secondary'>Create new account</Link></small></p>
                     <Social></Social>
                 </div>
             </div>
