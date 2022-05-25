@@ -7,7 +7,7 @@ import Navbar from './Shared/Navbar/Navbar';
 import Blogs from './Pages/Blogs/Blogs';
 function App() {
   return (
-    <div>
+    <div className='max-w-7xl mx-auto'>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
