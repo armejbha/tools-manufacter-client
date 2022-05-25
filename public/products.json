@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Hammer",
+        "description": "This is hammer for heavy work.Made with steel.",
+        "price": 39,
+        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/77ad16764abf4e828560ad44001cd640_9366/Squad_Glass_Bottle_720_ML_Black_FZ7115_01_standard.jpg",
+        "moq": 180,
+        "stock": 300
+    },
+    {
+        "name": "Hammer",
+        "description": "This is hammer for heavy work.Made with steel.",
+        "price": 39,
+        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/77ad16764abf4e828560ad44001cd640_9366/Squad_Glass_Bottle_720_ML_Black_FZ7115_01_standard.jpg",
+        "moq": 180,
+        "stock": 300
+    },
+    {
+        "name": "Hammer",
+        "description": "This is hammer for heavy work.Made with steel.",
+        "price": 39,
+        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/77ad16764abf4e828560ad44001cd640_9366/Squad_Glass_Bottle_720_ML_Black_FZ7115_01_standard.jpg",
+        "moq": 180,
+        "stock": 300
+    }
+]
