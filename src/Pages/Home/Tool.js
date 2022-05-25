@@ -14,7 +14,7 @@ const Tool = ({ product }) => {
                 <p>MOQ:{moq}</p>
                 <p>Avalaible:{stock}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary w-full">Buy Now</button>
+                    <button className="btn btn-primary w-full">PURCHASE</button>
                 </div>
             </div>
         </div>

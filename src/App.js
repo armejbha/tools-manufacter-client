@@ -5,6 +5,7 @@ import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Navbar from './Shared/Navbar/Navbar';
 import Blogs from './Pages/Blogs/Blogs';
+import Purchase from './Pages/Purchase/Purchase';
 function App() {
   return (
     <div className='max-w-7xl mx-auto'>
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/tool/:id' element={<Purchase></Purchase>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
       </Routes>
