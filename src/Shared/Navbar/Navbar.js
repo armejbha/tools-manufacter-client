@@ -1,11 +1,20 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate();
+    const logout = () => {
+        signOut(auth);
+        navigate('/home');
+    }
     const menulist = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        <li>{user ? <button onClick={logout} className="btn btn-ghost">Logout</button> : <Link to='/login'>Login</Link>}</li>
     </>
     return (
         <div className="navbar bg-base-100">

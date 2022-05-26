@@ -15,9 +15,9 @@ const Tool = ({ product }) => {
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>
-                <p>Price:${price}/pics</p>
-                <p>Min Order:{moq}</p>
-                <p>Avalaible:{stock}</p>
+                <p>Price:${price}/piece</p>
+                <p>Mininum Order:{moq}</p>
+                <p>Avalaible Quantity:{stock}</p>
                 <div className="card-actions">
                     <button onClick={() => navigateToPurchase(_id)} className="btn btn-primary w-full">PURCHASE</button>
                 </div>
