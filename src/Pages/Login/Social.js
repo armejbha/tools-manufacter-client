@@ -20,11 +20,11 @@ const Social = () => {
     }
     return (
         <div>
-            <div class="divider">OR</div>
+            <div className="divider">OR</div>
             {errorMessage}
             <button
                 onClick={() => signInWithGoogle()}
-                class="btn btn-outline block mx-auto w-full"
+                className="btn btn-outline block mx-auto w-full"
             >Continue With Google</button>
         </div>
     );

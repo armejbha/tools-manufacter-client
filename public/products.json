@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "name": "Hammer",
         "description": "This is hammer for heavy work.Made with steel.",
         "price": 39,
@@ -9,7 +8,6 @@
         "stock": 300
     },
     {
-        "_id": 2,
         "name": "Hammer",
         "description": "This is hammer for heavy work.Made with steel.",
         "price": 39,
@@ -18,7 +16,6 @@
         "stock": 300
     },
     {
-        "_id": 3,
         "name": "Hammer",
         "description": "This is hammer for heavy work.Made with steel.",
         "price": 39,
