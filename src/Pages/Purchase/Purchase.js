@@ -31,7 +31,6 @@ const Purchase = () => {
         const orderQuantity = parseInt(data.orderQuantity);
         const minimumOrder = parseInt(product.moq);
         const oldAvalaible = parseInt(product.stock);
-        console.log(oldAvalaible);
         const totalPrice = parseInt(product.price) * orderQuantity
         if (orderQuantity < minimumOrder) {
             return toast.error(`Please order minimum ${minimumOrder}`);
@@ -49,7 +48,7 @@ const Purchase = () => {
             orderQuantity: data.orderQuantity,
             img: product.img
         }
-        const url = 'http://localhost:5000/orders';
+        const url = 'http://localhost:5000/order';
         fetch(url, {
             method: 'POST',
             headers: {
@@ -127,22 +126,34 @@ const Purchase = () => {
                                 <label className="label">
                                     <span className="label-text">User Name</span>
                                 </label>
-                                <input type="text" disabled value={user.displayName} className="input input-bordered w-full max-w-xs"
-                                    {...register("name")} />
+                                <input type="text" readOnly value={user.displayName || ''} className="input input-bordered w-full max-w-xs"
+                                    {...register("name", {
+                                        required: {
+                                            value: true,
+                                        }
+                                    })} />
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" disabled value={user.email} className="input input-bordered w-full max-w-xs"
-                                    {...register("email")} />
+                                <input type="email" readOnly value={user.email || ''} className="input input-bordered w-full max-w-xs"
+                                    {...register("email", {
+                                        required: {
+                                            value: true,
+                                        }
+                                    })} />
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Product Name</span>
                                 </label>
-                                <input type="text" disabled value={product.name} className="input input-bordered w-full max-w-xs"
-                                    {...register("productName")} />
+                                <input type="text" readOnly value={product.name || ''} className="input input-bordered w-full max-w-xs"
+                                    {...register("productName", {
+                                        required: {
+                                            value: true,
+                                        }
+                                    })} />
                             </div>
 
                             <div className="form-control w-full max-w-xs">
@@ -153,29 +164,37 @@ const Purchase = () => {
                                     {...register("address",
                                         {
                                             required: {
-                                                value: true
+                                                value: true,
+                                                message: 'Address is Required'
                                             }
                                         })} />
+                                <label className="label">
+                                    {errors.address?.type === 'required' && <span className='text-red-500'>{errors.address.message}</span>}
+                                </label>
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Mobile Number</span>
                                 </label>
                                 <input type="text" placeholder='Enter Your Mobile Number' className="input input-bordered w-full max-w-xs"
-                                    {...register("phoneNumber",
+                                    {...register("number",
                                         {
                                             required: {
-                                                value: true
+                                                value: true,
+                                                message: 'Mobile Number is Required'
                                             }
                                         })} />
+                                <label className="label">
+                                    {errors.number?.type === 'required' && <span className='text-red-500'>{errors.number.message}</span>}
+                                </label>
                             </div>
                             <input type="submit" value='Purchase' className="btn btn-accent w-full max-w-xs text-white mt-2" />
                         </form>
                     </div>
                 </div>
 
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 
