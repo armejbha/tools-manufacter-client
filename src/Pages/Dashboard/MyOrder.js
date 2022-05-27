@@ -8,11 +8,7 @@ import Loading from '../../Shared/Loading/Loading';
 const MyOrder = () => {
     const [user] = useAuthState(auth)
     const url = `http://localhost:5000/myOrder?email=${user?.email}`;
-    const {
-        data: myOrders,
-        isLoading,
-        refetch
-    } = useQuery('myOrder', () =>
+    const { data: myOrders, isLoading, refetch } = useQuery('myOrder', () =>
         fetch(url)
             .then(res => res.json())
     )
@@ -39,7 +35,7 @@ const MyOrder = () => {
                     <thead>
                         <tr className='text-center'>
                             <th>No</th>
-                            <th>Image</th>
+                            <th>Image/Other</th>
                             <th>Name</th>
                             <th>Quantity</th>
                             <th>Total Price</th>

@@ -16,7 +16,7 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import AddReview from './Pages/Dashboard/AddReview';
 function App() {
   return (
-    <div className='max-w-7xl mx-auto'>
+    <div>
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
