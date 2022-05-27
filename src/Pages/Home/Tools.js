@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading/Loading';
 import Tool from './Tool';
 
 const Tools = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
+    const { data: products, isLoading } = useQuery('products', () =>
         fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+            .then(res => res.json()))
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <h2 className='text-center text-4xl my-16'>Our Making Tools</h2>

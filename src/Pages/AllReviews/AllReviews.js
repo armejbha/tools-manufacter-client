@@ -2,24 +2,23 @@ import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
 
-const Reviews = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () =>
+const AllReviews = () => {
+    const { data: reviews, isLoading } = useQuery('reviews', () =>
         fetch('http://localhost:5000/reviews')
             .then(res => res.json()));
     if (isLoading) {
         return <Loading></Loading>
     }
-    const sliceReviews = [...reviews].reverse().slice(0, 3)
+    const reverseArray = [...reviews].reverse();
     return (
-        <div className='mb-16'>
-            <h2 className='text-center text-4xl my-16'>Our client reviews</h2>
+        <div className='my-12'>
+            <h2 className='text-center font-bold text-3xl'>Our Client Review</h2>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-5'>
                 {
-                    sliceReviews.map(review =>
-                        <div key={review._id} className="card bg-base-100 shadow-xl">
+                    reverseArray.map(review =>
+                        <div className="card bg-base-100 shadow-xl">
                             <div className="avatar">
                                 <div className="w-48 mx-auto mt-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     <img src={review.picture} alt='review' />
@@ -40,12 +39,10 @@ const Reviews = () => {
                         </div>
                     )
                 }
+
             </div>
-            <button className="btn btn-md block m-auto">
-                <Link to='/allReviews'>See All Reviews</Link>
-            </button>
         </div>
     );
 };
 
-export default Reviews;
+export default AllReviews;

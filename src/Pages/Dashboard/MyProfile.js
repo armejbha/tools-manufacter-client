@@ -20,9 +20,9 @@ const MyProfile = () => {
             <h1 className='text-3xl my-8 font-bold text-center'>My Profile</h1>
             <div className="my-16">
                 <div className="w-full flex-col">
-                    <div className="avatar block mx-auto w-4/12 lg:w-2/12">
-                        <div className="w-32 mx-auto rounded-xl">
-                            <img img={profile?.img} alt='profile photos' />
+                    <div class="avatar block mx-auto">
+                        <div class="w-24 rounded-xl mx-auto">
+                            <img src={profile?.img} alt='profile photos' />
                         </div>
                         <div className='max-h-32 w-32 mx-auto'>
                             <EditImage></EditImage>

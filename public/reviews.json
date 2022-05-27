@@ -1,20 +1,17 @@
 [
     {
-        "_id": "623853b2614ad5aba311fdd1",
         "picture": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg",
         "ratings": 4.7,
         "name": "William James",
         "comment": "This is awesome.I never imaging i will use this car.It's made my life luxarus.I am very happy."
     },
     {
-        "_id": "623853b2578e9e6ad1ae0dd5",
         "ratings": 4.4,
         "picture": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-2379004.jpg&fm=jpg",
         "name": "Alexander Henry",
         "comment": "I never think i can buy this car.It's have highly performance.If anyone buy any sports car.It's will be best choise.I am satisfy buy this car."
     },
     {
-        "_id": "623853b21fb149d2ee7b76c7",
         "ratings": 4.6,
         "picture": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?cs=srgb&dl=pexels-nitin-khajotia-1516680.jpg&fm=jpg",
         "name": "Black Jackson",
