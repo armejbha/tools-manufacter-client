@@ -12,11 +12,16 @@ import EditProfile from './EditProfile';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     const { data: profile, isLoading } = useQuery('profile', () =>
-        fetch(`http://localhost:5000/profile?email=${user?.email}`)
+        fetch(`http://localhost:5000/profile?email=${user?.email}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json()))
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <h1 className='text-3xl my-8 font-bold text-center'>My Profile</h1>
@@ -59,61 +64,6 @@ const MyProfile = () => {
                     <EditProfile></EditProfile>
                 </div>
             </div>
-            {/* <div className="my-16">
-                <div className="w-full flex-col">
-                    <div class="avatar block mx-auto">
-                        <div class="w-44 rounded-xl mx-auto">
-                            <img src={profile?.img} alt='profile photos' />
-                        </div>
-                        <div className='max-h-32 w-32 mx-auto'>
-                            <EditImage></EditImage>
-                        </div>
-                    </div>
-                    <div className="w-full">
-                        <div class="card-body grid lg:grid-cols-3">
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">name</span>
-                                </label>
-                                <input type="text" disabled value={user?.displayName || profile?.name} class="input input-bordered" />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Email</span>
-                                </label>
-                                <input type="text" disabled value={user?.email} class="input input-bordered" />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Location</span>
-                                </label>
-                                <input type="text" disabled value={profile?.location || ''} class="input input-bordered" />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Education</span>
-                                </label>
-                                <input type="text" disabled value={profile?.education || ''} class="input input-bordered" />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Linkedin Profile</span>
-                                </label>
-                                <input type="text" disabled value={profile?.linkedin || ''} class="input input-bordered" />
-                            </div>
-                            <div class="form-control">
-                                <label class="label">
-                                    <span class="label-text">Number</span>
-                                </label>
-                                <input type="text" disabled value={profile?.number || ''} class="input input-bordered" />
-                            </div>
-                        </div>
-                        <div className="mt-6">
-                            <EditProfile></EditProfile>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </div>
     );
 };

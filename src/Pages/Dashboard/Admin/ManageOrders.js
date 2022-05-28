@@ -6,11 +6,16 @@ import Loading from '../../../Shared/Loading/Loading';
 
 const ManageOrders = () => {
     const { data: orders, isLoading, refetch } = useQuery('myOrder', () =>
-        fetch('http://localhost:5000/order')
+        fetch('http://localhost:5000/order', {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json()))
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     const handleDelete = id => {
         const url = `http://localhost:5000//order/${id}`;
         fetch(url, {
@@ -34,7 +39,6 @@ const ManageOrders = () => {
                             <th>Name</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
-                            <th>Payment</th>
                             <th>Remove</th>
                             <th>Payment</th>
                         </tr>
@@ -61,21 +65,33 @@ const ManageOrders = () => {
                                     <td>{order.product}</td>
                                     <td>{order.orderQuantity}</td>
                                     <td>{order.totalPrice}</td>
-                                    <td>Payment</td>
                                     <td>
-                                        <label for="order-cancel" class="btn btn-sm modal-button">
-                                            Order Cancel
-                                        </label>
-                                        <input type="checkbox" id="order-cancel" class="modal-toggle" />
-                                        <div class="modal modal-bottom sm:modal-middle">
-                                            <div class="modal-box">
-                                                <h3 class="font-bold text-lg">Do You Want To Cancel This Order</h3>
-                                                <div class="modal-action">
-                                                    <label onClick={() => handleDelete(order._id)} for="order-cancel" class="btn">Yes</label>
-                                                    <label for="order-cancel" class="btn">No</label>
+                                        {
+                                            !order.paid &&
+                                            <div>
+                                                <label for="order-cancel" class="btn btn-sm modal-button">
+                                                    Delete
+                                                </label>
+                                                <input type="checkbox" id="order-cancel" class="modal-toggle" />
+                                                <div class="modal modal-bottom sm:modal-middle">
+                                                    <div class="modal-box">
+                                                        <h3 class="font-bold text-lg">Do You Want To Delete</h3>
+                                                        <div class="modal-action">
+                                                            <label onClick={() => handleDelete(order._id)} for="order-cancel" class="btn">Yes</label>
+                                                            <label for="order-cancel" class="btn">No</label>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        }
+                                    </td>
+                                    <td>
+                                        {
+                                            order.paid && <span className='btn btn-sm btn-primary text-white'>Pending</span>
+                                        }
+                                        {
+                                            !order.paid && <Link to={`/dashboard/payment/${order._id}`} className='btn btn-sm'>Unpaid</Link>
+                                        }
                                     </td>
                                 </tr>)
                         }

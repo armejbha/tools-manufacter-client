@@ -26,7 +26,7 @@ const AddReview = () => {
             name: data.name,
             email: data.email,
             comment: data.comment,
-            rating: data.rating,
+            ratings: data.rating,
             picture: profile.img
         }
         const url = 'http://localhost:5000/review';
