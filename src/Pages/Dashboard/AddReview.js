@@ -15,9 +15,9 @@ const AddReview = () => {
     const { data: profile, isLoading } = useQuery('reviewProfile', () =>
         fetch(url)
             .then(res => res.json()))
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+    // if (isLoading) {
+    //     return <Loading></Loading>
+    // }
     const onSubmit = data => {
         if (data.rating > 5 && data.rating < 0) {
             return toast.error('Please Enter Rating 0 to 5')
@@ -53,7 +53,7 @@ const AddReview = () => {
                                 <span className="label-text">Your Name</span>
                             </label>
                             <input type="text"
-                                defaultValue={profile.name || ''}
+                                defaultValue={profile?.name || ''}
                                 className="input input-bordered w-full"
                                 {...register("name")}
                             />
@@ -64,7 +64,7 @@ const AddReview = () => {
                             </label>
                             <input type="email"
                                 readOnly
-                                value={profile.email}
+                                value={user?.email}
                                 className="input input-bordered w-full"
                                 {...register("email")}
                             />

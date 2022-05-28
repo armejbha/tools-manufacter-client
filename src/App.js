@@ -15,6 +15,10 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import AddReview from './Pages/Dashboard/AddReview';
 import AllReviews from './Pages/AllReviews/AllReviews';
+import ManageOrders from './Pages/Dashboard/Admin/ManageOrders';
+import AddProduct from './Pages/Dashboard/Admin/AddProduct';
+import ManageProduct from './Pages/Dashboard/Admin/ManageProduct';
+import EditProduct from './Pages/Dashboard/Admin/EditProduct';
 function App() {
   return (
     <div>
@@ -27,6 +31,14 @@ function App() {
             <Purchase></Purchase>
           </RequireAuth>
         }></Route>
+
+        <Route path='/editProduct/:id' element={
+          <RequireAuth>
+            <EditProduct></EditProduct>
+          </RequireAuth>
+        }>
+        </Route>
+
         <Route path="/dashboard" element={
           <RequireAuth>
             <Dashboard></Dashboard>
@@ -35,6 +47,9 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='myOrder' element={<MyOrder></MyOrder>}></Route>
           <Route path='addReview' element={<AddReview></AddReview>}></Route>
+          <Route path='manageOrder' element={<ManageOrders></ManageOrders>}></Route>
+          <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+          <Route path='manageProduct' element={<ManageProduct></ManageProduct>}></Route>
         </Route>
         <Route path='/allReviews' element={<AllReviews></AllReviews>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>

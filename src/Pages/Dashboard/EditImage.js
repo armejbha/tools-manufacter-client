@@ -44,7 +44,7 @@ const EditImage = () => {
             <div className=''>
                 <label htmlFor="edit-photo" className="btn my-8 lg:ml-2">Edit Photo</label>
                 <input type="checkbox" id="edit-photo" className="modal-toggle" />
-                <div className="modal modal-middle lg:modal-middle lg:ml-64">
+                <div className="modal modal-middle lg:modal-middle">
                     <div className="modal-box">
                         <label htmlFor="edit-photo" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                         <form className='w-full' onSubmit={handleSubmit(onSubmit)}>

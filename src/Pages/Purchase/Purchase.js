@@ -39,9 +39,9 @@ const Purchase = () => {
         }
 
         const purchase = {
-            name: user.displayName,
+            name: data.name,
             product: product.name,
-            email: user.email,
+            email: data.email,
             number: data.number,
             address: data.address,
             totalPrice: totalPrice,
@@ -126,18 +126,24 @@ const Purchase = () => {
                                 <label className="label">
                                     <span className="label-text">User Name</span>
                                 </label>
-                                <input type="text" readOnly value={user.displayName || ''} className="input input-bordered w-full max-w-xs"
+                                <input type="text"
+                                    value={user?.displayName || ''}
+                                    className="input input-bordered w-full"
                                     {...register("name", {
                                         required: {
                                             value: true,
                                         }
-                                    })} />
+                                    })}
+                                />
                             </div>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" readOnly value={user.email || ''} className="input input-bordered w-full max-w-xs"
+                                <input type="email"
+                                    readOnly
+                                    value={user?.email || ''}
+                                    className="input input-bordered w-full max-w-xs"
                                     {...register("email", {
                                         required: {
                                             value: true,
@@ -148,7 +154,9 @@ const Purchase = () => {
                                 <label className="label">
                                     <span className="label-text">Product Name</span>
                                 </label>
-                                <input type="text" readOnly value={product.name || ''} className="input input-bordered w-full max-w-xs"
+                                <input type="text"
+                                    value={product?.name || ''}
+                                    className="input input-bordered w-full max-w-xs"
                                     {...register("productName", {
                                         required: {
                                             value: true,
@@ -160,7 +168,9 @@ const Purchase = () => {
                                 <label className="label">
                                     <span className="label-text">Address</span>
                                 </label>
-                                <input type="text" placeholder='Enter Your Address' className="input input-bordered w-full max-w-xs"
+                                <input type="text"
+                                    placeholder='Enter Your Address'
+                                    className="input input-bordered w-full max-w-xs"
                                     {...register("address",
                                         {
                                             required: {
@@ -176,7 +186,9 @@ const Purchase = () => {
                                 <label className="label">
                                     <span className="label-text">Mobile Number</span>
                                 </label>
-                                <input type="text" placeholder='Enter Your Mobile Number' className="input input-bordered w-full max-w-xs"
+                                <input type="text"
+                                    placeholder='Enter Your Mobile Number'
+                                    className="input input-bordered w-full max-w-xs"
                                     {...register("number",
                                         {
                                             required: {

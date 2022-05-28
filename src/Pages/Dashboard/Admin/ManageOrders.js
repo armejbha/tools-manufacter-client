@@ -1,32 +1,27 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import auth from '../../firebase.init';
-import Loading from '../../Shared/Loading/Loading';
+import Loading from '../../../Shared/Loading/Loading';
 
-const MyOrder = () => {
-    const [user] = useAuthState(auth)
-    const url = `http://localhost:5000/myOrder?email=${user?.email}`;
-    const { data: myOrders, isLoading, refetch } = useQuery('myOrder', () =>
-        fetch(url)
-            .then(res => res.json())
-    )
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+const ManageOrders = () => {
+    const { data: orders, isLoading, refetch } = useQuery('myOrder', () =>
+        fetch('http://localhost:5000/order')
+            .then(res => res.json()))
+    // if (isLoading) {
+    //     return <Loading></Loading>
+    // }
     const handleDelete = id => {
-        const url = `http://localhost:5000/order/${id}`;
+        const url = `http://localhost:5000//order/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(result => {
-                toast.success('Delete Product from My Order');
+                toast.success('Delete Product')
                 refetch()
             })
     }
-
     return (
         <div>
             <h1 className='text-3xl text-center font-bold my-8'>My Order</h1>
@@ -35,17 +30,18 @@ const MyOrder = () => {
                     <thead>
                         <tr className='text-center'>
                             <th>No</th>
-                            <th>Image and Other</th>
+                            <th>Image and other</th>
                             <th>Name</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
                             <th>Payment</th>
                             <th>Remove</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            myOrders.map((order, index) =>
+                            orders?.map((order, index) =>
                                 <tr key={order._id} className="text-center">
                                     <th>{index + 1}</th>
                                     <td>
@@ -83,7 +79,6 @@ const MyOrder = () => {
                                     </td>
                                 </tr>)
                         }
-
                     </tbody>
                 </table>
             </div>
@@ -91,4 +86,4 @@ const MyOrder = () => {
     );
 };
 
-export default MyOrder;
+export default ManageOrders;
