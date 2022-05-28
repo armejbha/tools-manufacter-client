@@ -11,8 +11,8 @@ const Tools = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
-            <h2 className='text-center text-4xl my-16'>Our Making Tools</h2>
+        <div className='mx-12'>
+            <h2 className='text-center text-4xl my-16'>Our Making Product</h2>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-5'>
                 {
                     products.map(product => <Tool

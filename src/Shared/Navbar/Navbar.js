@@ -12,11 +12,12 @@ const Navbar = () => {
     const menulist = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
+        <li><Link to='/protfolio'>My Protfolio</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
         <li>{user ? <Link onClick={logout} to='/login'>Logout</Link> : <Link to='/login'>Login</Link>}</li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 lg:mx-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -26,7 +27,7 @@ const Navbar = () => {
                         {menulist}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl lg:text-3xl font-bold">Manufactering</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl lg:text-3xl font-bold">Tools Manufacter</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

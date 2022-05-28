@@ -5,7 +5,7 @@ import Loading from '../../../Shared/Loading/Loading';
 
 const MakeAdmin = () => {
     const { data: users, isLoading, refetch } = useQuery('users', () =>
-        fetch(`http://localhost:5000/user`, {
+        fetch(`https://pure-shore-37595.herokuapp.com/user`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -16,7 +16,7 @@ const MakeAdmin = () => {
         return <Loading></Loading>
     }
     const handleAdmin = email => {
-        const url = `http://localhost:5000/user/admin/${email}`;
+        const url = `https://pure-shore-37595.herokuapp.com/user/admin/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -37,7 +37,7 @@ const MakeAdmin = () => {
             })
     }
     return (
-        <div className='max-h-screen'>
+        <div className='max-h-screen lg:mx-12'>
             <h1 className='text-3xl text-center font-bold my-8'>Make Admin</h1>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
@@ -74,7 +74,7 @@ const MakeAdmin = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                : <button className='btn btn-sm m-1 bg-primary text-white'>Already Admin</button>
+                                                : <button className='btn btn-sm m-1 bg-primary border-0 text-white'>Already Admin</button>
                                         }
                                     </td>
                                 </tr>)

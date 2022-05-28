@@ -24,7 +24,7 @@ const EditProduct = () => {
             quantity: data.quantity,
             price: data.price
         }
-        const url = `http://localhost:5000/editProduct/${id}`;
+        const url = `https://pure-shore-37595.herokuapp.com/editProduct/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -41,7 +41,7 @@ const EditProduct = () => {
             })
     }
     return (
-        <div className='my-4 flex justify-center'>
+        <div className='my-4 flex justify-center bg-base-200 py-12'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body items-center">
                     <h2 className="card-title text-3xl font-bold">Edit Your Product</h2>

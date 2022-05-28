@@ -27,7 +27,7 @@ const AddProduct = () => {
                         price: data.price,
                         img: result.data.url
                     }
-                    const url = 'http://localhost:5000/product';
+                    const url = 'https://pure-shore-37595.herokuapp.com/product';
                     fetch(url, {
                         method: 'POST',
                         headers: {
@@ -45,10 +45,10 @@ const AddProduct = () => {
     }
 
     return (
-        <div class="min-h-screen">
-            <div class="flex-col">
+        <div class="min-h-screen lg:mx-12">
+            <div class="flex-col ">
                 <h2 className="text-center text-3xl font-bold my-8">Add Product</h2>
-                <form className='mx-16' onSubmit={handleSubmit(onSubmit)}>
+                <form className='lg:mx-16 bg-base-100 p-12 rounded-md' onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full ">
                         {/* <label className="label">
                             <span className="label-text">Product Name</span>
@@ -144,7 +144,7 @@ const AddProduct = () => {
                             <span className="label-text">Image</span>
                         </label> */}
                         <div className='w-full border rounded-lg flex-col justify-center items-center p-8'>
-                            <div className='w-5/12 mx-auto'>
+                            <div className='lg:w-5/12 mx-auto'>
                                 <p className='text-center text-xl font-bold'>Drag and Drop your Image anywhare or</p>
                                 <input type="file"
                                     placeholder="Enter Your Image"
@@ -162,7 +162,7 @@ const AddProduct = () => {
                             {errors.image?.type === 'required' && <span className='text-red-500'>{errors.image.message}</span>}
                         </label>
                     </div>
-                    <input className='btn btn-natural block m-auto w-full font-bold'
+                    <input className='btn btn-primary block m-auto w-full font-bold'
                         type="submit" value='Add Product' />
                 </form>
             </div>

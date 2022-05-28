@@ -96,7 +96,7 @@ const EditProfile = () => {
                             {...register("number")}
                         />
                     </div>
-                    <input className='btn btn-natural my-4 block m-auto w-full font-bold' type="submit" value='Update' />
+                    <input className='btn btn-primary my-4 block m-auto w-full font-bold' type="submit" value='Update' />
                 </form>
             </div>
         </div>

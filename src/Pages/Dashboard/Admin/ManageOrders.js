@@ -6,7 +6,7 @@ import Loading from '../../../Shared/Loading/Loading';
 
 const ManageOrders = () => {
     const { data: orders, isLoading, refetch } = useQuery('myOrder', () =>
-        fetch('http://localhost:5000/order', {
+        fetch('https://pure-shore-37595.herokuapp.com/order', {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -17,7 +17,7 @@ const ManageOrders = () => {
         return <Loading></Loading>
     }
     const handleDelete = id => {
-        const url = `http://localhost:5000//order/${id}`;
+        const url = `https://pure-shore-37595.herokuapp.com/order/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -28,8 +28,8 @@ const ManageOrders = () => {
             })
     }
     return (
-        <div>
-            <h1 className='text-3xl text-center font-bold my-8'>My Order</h1>
+        <div className='lg:mx-12'>
+            <h1 className='text-3xl text-center font-bold my-8'>Manage ALL Order</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra  w-full">
                     <thead>
@@ -69,13 +69,13 @@ const ManageOrders = () => {
                                         {
                                             !order.paid &&
                                             <div>
-                                                <label for="order-cancel" class="btn btn-sm modal-button">
-                                                    Delete
+                                                <label for="order-cancel" class="btn btn-sm bg-red-400 border-0 modal-button">
+                                                    remove
                                                 </label>
                                                 <input type="checkbox" id="order-cancel" class="modal-toggle" />
                                                 <div class="modal modal-bottom sm:modal-middle">
                                                     <div class="modal-box">
-                                                        <h3 class="font-bold text-lg">Do You Want To Delete</h3>
+                                                        <h3 class="font-bold text-lg">Do You Want To Delete This</h3>
                                                         <div class="modal-action">
                                                             <label onClick={() => handleDelete(order._id)} for="order-cancel" class="btn">Yes</label>
                                                             <label for="order-cancel" class="btn">No</label>

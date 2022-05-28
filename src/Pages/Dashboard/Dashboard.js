@@ -10,12 +10,12 @@ const Dashboard = () => {
     return (
         <div class="drawer drawer-mobile">
             <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content">
+            <div class="drawer-content bg-base-200">
                 <Outlet></Outlet>
             </div>
             <div class="drawer-side">
                 <label for="mobile-drawer" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-300 text-base-content">
+                <ul class="menu p-4 overflow-y-auto w-80 text-base-content">
                     <li><Link to='/dashboard'>My Profile</Link></li>
 
                     {

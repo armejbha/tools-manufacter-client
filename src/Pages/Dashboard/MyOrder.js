@@ -33,7 +33,7 @@ const MyOrder = () => {
     }
 
     return (
-        <div>
+        <div className='lg:mx-12'>
             <h1 className='text-3xl text-center font-bold my-8'>My Order</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra  w-full">

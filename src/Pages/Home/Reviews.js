@@ -14,8 +14,8 @@ const Reviews = () => {
     }
     const sliceReviews = [...reviews].reverse().slice(0, 3)
     return (
-        <div className='mb-16'>
-            <h2 className='text-center text-4xl my-16'>Our client reviews</h2>
+        <div className='mb-16 mx-12'>
+            <h2 className='text-center text-4xl my-16'>Our Customer Reviews</h2>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-5'>
                 {
                     sliceReviews.map(review =>
@@ -41,7 +41,7 @@ const Reviews = () => {
                     )
                 }
             </div>
-            <button className="btn btn-md block m-auto">
+            <button className="btn btn-primary block mx-auto my-8">
                 <Link to='/allReviews'>See All Reviews</Link>
             </button>
         </div>

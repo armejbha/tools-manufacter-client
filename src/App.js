@@ -22,6 +22,8 @@ import EditProduct from './Pages/Dashboard/Admin/EditProduct';
 import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin';
 import RequiredAdmin from './Pages/Dashboard/Admin/RequireAdmin';
 import Payment from './Pages/Dashboard/Payment';
+import NotFound from './Shared/NotFound/NotFound';
+import MyProtfolio from './Pages/MyProtfolio/MyProtfolio';
 function App() {
   return (
     <div>
@@ -56,10 +58,12 @@ function App() {
           <Route path='manageProduct' element={<RequiredAdmin><ManageProduct></ManageProduct></RequiredAdmin>}></Route>
           <Route path='makeAdmin' element={<RequiredAdmin><MakeAdmin></MakeAdmin></RequiredAdmin>}></Route>
         </Route>
+        <Route path="/protfolio" element={<MyProtfolio></MyProtfolio>}></Route>
         <Route path='/allReviews' element={<AllReviews></AllReviews>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>

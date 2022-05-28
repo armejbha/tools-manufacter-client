@@ -7,13 +7,13 @@ import Loading from '../../../Shared/Loading/Loading';
 const ManageProduct = () => {
     const navigate = useNavigate()
     const { data: products, isLoading, refetch } = useQuery('products', () =>
-        fetch('http://localhost:5000/products')
+        fetch('https://pure-shore-37595.herokuapp.com/products')
             .then(res => res.json()))
     if (isLoading) {
         return <Loading></Loading>
     }
     const handleDelete = id => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://pure-shore-37595.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -27,7 +27,7 @@ const ManageProduct = () => {
         navigate(`/editProduct/${id}`);
     }
     return (
-        <div>
+        <div className='lg:mx-12'>
             <h1 className='text-3xl text-center font-bold my-8'>Manage All Products</h1>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
@@ -63,7 +63,7 @@ const ManageProduct = () => {
                                     <td>${product.price}/piece</td>
                                     <td><button onClick={() => editProduct(product._id)} className='btn btn-sm'>Edit</button></td>
                                     <td>
-                                        <label for="delete-product" className="btn btn-sm modal-button">
+                                        <label for="delete-product" className="btn btn-sm bg-red-400 border-0 modal-button">
                                             Delete
                                         </label>
                                         <input type="checkbox" id="delete-product" className="modal-toggle" />
@@ -76,16 +76,6 @@ const ManageProduct = () => {
                                                 </div>
                                             </div>
                                         </div>
-
-                                        {/* <div className="dropdown dropdown-left dropdown-end">
-                                            <label tabindex="0" className="btn btn-sm m-1">Delete</label>
-                                            <div tabindex="0" className="dropdown-content card w-80 p-2 shadow bg-primary text-primary-content">
-                                                <div className="card-body">
-                                                    <h3 className="card-title">Do You Want To Delete</h3>
-                                                    <button className='btn w-1/2' onClick={() => handleDelete(product._id)}>Yes</button>
-                                                </div>
-                                            </div>
-                                        </div> */}
                                     </td>
                                 </tr>)
                         }

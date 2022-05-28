@@ -1,25 +1,49 @@
 [
     {
         "name": "Hammer",
-        "description": "This is hammer for heavy work.Made with steel.",
-        "price": 39,
-        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/77ad16764abf4e828560ad44001cd640_9366/Squad_Glass_Bottle_720_ML_Black_FZ7115_01_standard.jpg",
+        "description": "spec Ops - SPEC-M22CF Tools Framing Hammer",
+        "price": 23,
+        "img": "https://i.ibb.co/VwKGJPv/hammer.jpg",
         "moq": 180,
         "stock": 17500
     },
     {
-        "name": "Hammer",
-        "description": "This is hammer for heavy work.Made with steel.",
-        "price": 39,
-        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/77ad16764abf4e828560ad44001cd640_9366/Squad_Glass_Bottle_720_ML_Black_FZ7115_01_standard.jpg",
+        "name": "Screwdrive",
+        "description": "Red Color Tools 32500 11-in-1 Screwdriver",
+        "price": 12,
+        "img": "https://i.ibb.co/ZSdPqd6/screwdriver.jpg",
         "moq": 180,
         "stock": 17500
     },
     {
-        "name": "Hammer",
-        "description": "This is hammer for heavy work.Made with steel.",
+        "name": "Chisel",
+        "description": "Mayhew Select 10602 3/4-by-7-Inch Cold Chisel ",
+        "price": 7,
+        "img": "https://i.ibb.co/CVk2bsw/chisel.jpg",
+        "moq": 180,
+        "stock": 17500
+    },
+    {
+        "name": "Drill Machine",
+        "description": "BLACK+DECKER LDX220C MAX 2-Speed Drill Machine",
         "price": 39,
-        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/77ad16764abf4e828560ad44001cd640_9366/Squad_Glass_Bottle_720_ML_Black_FZ7115_01_standard.jpg",
+        "img": "https://i.ibb.co/k0NWGPX/drillmachine.jpg",
+        "moq": 56,
+        "stock": 17500
+    },
+    {
+        "name": "Wrench",
+        "description": "Olympia Tools 01-012 12 Adjustable Wrench",
+        "price": 9,
+        "img": "https://i.ibb.co/r46BkgS/wrench.jpg",
+        "moq": 180,
+        "stock": 17500
+    },
+    {
+        "name": "Pliers",
+        "description": "IRWIN VISE-GRIP Pliers Set",
+        "price": 8,
+        "img": "https://i.ibb.co/7jp7QjY/pliers.jpg",
         "moq": 180,
         "stock": 17500
     }

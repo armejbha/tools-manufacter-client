@@ -6,9 +6,9 @@ const Banner = () => {
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                    <p className="mb-5 text-lg">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-primary">SEE MORE</button>
+                    <h1 className="mb-5 text-4xl font-bold">Tools Manufacter, is the world larget tools manufactering company.</h1>
+                    <p className="mb-5 text-md">This is world larget tools manufacter company.It's grow business justify market,quality assured and customer satisfaction.</p>
+                    <button className="btn btn-primary">GET STARTED</button>
                 </div>
             </div>
         </div>

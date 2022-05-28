@@ -23,7 +23,7 @@ const MyProfile = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className='lg:mx-12'>
             <h1 className='text-3xl my-8 font-bold text-center'>My Profile</h1>
             <div className='grid lg:grid-cols-2 gap-12'>
                 <div className=" card lg:card-side bg-base-100 shadow-xl py-8">
@@ -36,7 +36,7 @@ const MyProfile = () => {
                                 <EditImage></EditImage>
                             </div>
                         </div>
-                        <div className='lg:w-1/2 mx-auto'>
+                        <div className='lg:w-1/2 w-11/12 mx-auto'>
                             <div className='flex items-center mt-4'>
                                 <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
                                 <p className='ml-2'>Email:{user?.email}</p>

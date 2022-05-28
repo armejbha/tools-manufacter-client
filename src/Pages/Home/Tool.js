@@ -10,12 +10,12 @@ const Tool = ({ product }) => {
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure className=''>
-                <img className='rounded-md' src={img} alt="Shoes" />
+                <img className='rounded-md max-h-full' src={img} alt="Shoes" />
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
-                <p>{description}</p>
-                <p>Price:${price}/piece</p>
+                <p className='opacity-50'>{description}</p>
+                <p cl>Price:${price}/piece</p>
                 <p>Mininum Order:{moq}</p>
                 <p>Avalaible Quantity:{stock}</p>
                 <div className="card-actions">
