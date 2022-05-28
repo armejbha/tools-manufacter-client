@@ -12,7 +12,7 @@ import EditProfile from './EditProfile';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     const { data: profile, isLoading } = useQuery('profile', () =>
-        fetch(`http://localhost:5000/profile?email=${user?.email}`, {
+        fetch(`https://pure-shore-37595.herokuapp.com/profile?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

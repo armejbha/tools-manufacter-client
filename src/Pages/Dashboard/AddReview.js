@@ -11,7 +11,7 @@ const AddReview = () => {
     const navigate = useNavigate();
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [user] = useAuthState(auth);
-    const url = `http://localhost:5000/profile?email=${user?.email}`;
+    const url = `https://pure-shore-37595.herokuapp.com/profile?email=${user?.email}`;
     const { data: profile, isLoading } = useQuery('reviewProfile', () =>
         fetch(url)
             .then(res => res.json()))
@@ -29,7 +29,7 @@ const AddReview = () => {
             ratings: data.rating,
             picture: profile.img
         }
-        const url = 'http://localhost:5000/review';
+        const url = 'https://pure-shore-37595.herokuapp.com/review';
         fetch(url, {
             method: 'POST',
             headers: {

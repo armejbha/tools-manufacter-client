@@ -10,7 +10,7 @@ const EditProfile = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
-    const url = `http://localhost:5000/profile?email=${user.email}`
+    const url = `https://pure-shore-37595.herokuapp.com/profile?email=${user.email}`
     const { data: profile, refetch } = useQuery('profile', () =>
         fetch(url)
             .then(res => res.json()))
@@ -22,7 +22,7 @@ const EditProfile = () => {
             linkedin: data.linkedin,
             number: data.number
         }
-        const url = `http://localhost:5000/profile/${user.email}`;
+        const url = `https://pure-shore-37595.herokuapp.com/profile/${user.email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

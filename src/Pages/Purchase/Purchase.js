@@ -48,7 +48,7 @@ const Purchase = () => {
             orderQuantity: data.orderQuantity,
             img: product.img
         }
-        const url = 'http://localhost:5000/order';
+        const url = 'https://pure-shore-37595.herokuapp.com/order';
         fetch(url, {
             method: 'POST',
             headers: {

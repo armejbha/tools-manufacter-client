@@ -9,7 +9,7 @@ import Loading from '../../Shared/Loading/Loading';
 const MyOrder = () => {
     const [user] = useAuthState(auth)
     const { data: myOrders, isLoading, refetch } = useQuery('myOrder', () =>
-        fetch(`http://localhost:5000/myOrder?email=${user?.email}`, {
+        fetch(`https://pure-shore-37595.herokuapp.com/myOrder?email=${user?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -21,7 +21,7 @@ const MyOrder = () => {
         return <Loading></Loading>
     }
     const handleDelete = id => {
-        const url = `http://localhost:5000/order/${id}`;
+        const url = `https://pure-shore-37595.herokuapp.com/order/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

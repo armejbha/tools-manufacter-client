@@ -11,7 +11,7 @@ const CheckoutForm = ({ paymentData }) => {
     const { _id, totalPrice, name, email } = paymentData;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://pure-shore-37595.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -72,7 +72,7 @@ const CheckoutForm = ({ paymentData }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://pure-shore-37595.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

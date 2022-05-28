@@ -25,7 +25,7 @@ const EditImage = () => {
                     console.log(result.data);
                     const img = result.data.url;
                     const userData = { img }
-                    const url = `http://localhost:5000/picture/${user.email}`;
+                    const url = `https://pure-shore-37595.herokuapp.com/picture/${user.email}`;
                     fetch(url, {
                         method: 'PUT',
                         headers: {

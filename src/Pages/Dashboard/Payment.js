@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L4OLHBodOfe8d2gUBgvYOR01HBVXCDnSB3cqDFhe4bS33i9idnlTfKAC1tOl2sZQ1WpwU6vWwc8eNopwZeHcZNo00zDPPrHEw');
 const Payment = () => {
     const { id } = useParams()
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://pure-shore-37595.herokuapp.com/order/${id}`;
     const { data: paymentData, isLoading } = useQuery(['payment', id], () =>
         fetch(url, {
             method: 'GET',
