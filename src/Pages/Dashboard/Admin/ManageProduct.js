@@ -13,7 +13,6 @@ const ManageProduct = () => {
         return <Loading></Loading>
     }
     const handleDelete = id => {
-        console.log(id)
         const url = `http://localhost:5000/products/${id}`;
         fetch(url, {
             method: 'DELETE'

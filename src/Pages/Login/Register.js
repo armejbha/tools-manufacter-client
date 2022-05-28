@@ -6,10 +6,12 @@ import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
+import useToken from '../../hooks/useToken';
 
 const Register = () => {
-    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user);
     const location = useLocation();
     const navigate = useNavigate();
     let from = location.state?.from?.pathname || "/";
@@ -21,8 +23,8 @@ const Register = () => {
     if (error || updateError) {
         errorMessage = <p className='text-red-500'>{error.message || updateError.message}</p>
     }
-    if (user) {
-        navigate(from, { replace: true });
+    if (token) {
+        return navigate(from, { replace: true });
     }
     const onSubmit = async data => {
         console.log(data);
